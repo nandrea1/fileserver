@@ -76,6 +76,11 @@ class SFTPServer(web.Application):
         ioloop.IOLoop.instance().start()
 
 if __name__ == '__main__':
-    event_store_objs = [getattr(event_stores, store_name)() for store_name in settings.EVENT_STORES]
-    server_obj = SFTPServer(event_stores=event_store_objs)
-    server_obj.start()
+    
+    try:
+        event_store_objs = [getattr(event_stores, store_name)() for store_name in settings.EVENT_STORES]
+        server_obj = SFTPServer(event_stores=event_store_objs)
+        server_obj.start()
+    
+    except KeyboardInterrupt:
+        logger.info('Keyboard Interrupt Received, Shutting Down Server...')

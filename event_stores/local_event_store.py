@@ -1,4 +1,4 @@
-from sftpserver.event_stores.base_event_store import BaseEventStore
+from base_event_store import BaseEventStore
 
 LOCAL_EVENT_STORE = []
 

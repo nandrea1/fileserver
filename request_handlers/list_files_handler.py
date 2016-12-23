@@ -4,7 +4,7 @@ import re
 
 from tornado import web
 
-from sftpserver.settings import VALID_SEARCH_PATH
+from settings import VALID_SEARCH_PATH
 
 logger = logging.getLogger(__name__)
 

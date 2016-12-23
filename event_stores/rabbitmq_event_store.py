@@ -3,8 +3,8 @@ import logging
 
 import pika
 
-from sftpserver.event_stores.base_event_store import BaseEventStore
-from sftpserver import settings
+from base_event_store import BaseEventStore 
+import settings
 
 logger = logging.getLogger(__name__)
 

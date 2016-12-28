@@ -18,6 +18,6 @@ class SFTPWebSocket(websocket.WebSocketHandler):
         logger.debug('Message From {}: {}'.format(self, message))
 
     def on_close(self):
-        if self in self.application.clients(self):
+        if self in self.application.clients:
             self.application.clients.remove(self)
         logger.debug('{} Closed Socket'.format(self))

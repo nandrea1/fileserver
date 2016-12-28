@@ -13,7 +13,7 @@ class LocalEventStore(BaseEventStore):
         result_set = []
         for event in LOCAL_EVENT_STORE:
             if event.check_event(query):
-                result_set.append(event)
+                result_set.append(event.__dict__)
         return result_set
 
     def store(self, event):
